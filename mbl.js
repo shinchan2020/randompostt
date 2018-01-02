@@ -1,70 +1,25 @@
-var urlweb = "http://amankan.iblogger.org";
-function auto_safelink() {
-    auto_safeconvert()
-}
-function auto_safeconvert() {
-    var _0x8741x3 = window['location']['hostname'];
-    '' == protected_links || protected_links['match'](_0x8741x3) ? '' == protected_links && (protected_links = _0x8741x3) : protected_links += ', ' + _0x8741x3;
-    var _0x8741x4 = '',
-        _0x8741x5 = new Array,
-        _0x8741x6 = 0;
-    _0x8741x4 = document['getElementsByTagName']('a'), a_to_va = _0x8741x4['length'], _0x8741x5 = a_to_fa(), _0x8741x6 = _0x8741x5['length'];
-    for (var _0x8741x7 = !1, _0x8741x8 = 0, _0x8741x9 = '', _0x8741xa = 0; a_to_va > _0x8741xa; _0x8741xa++) {
-        for (_0x8741x7 = !1, _0x8741x8 = 0; 0 == _0x8741x7 && _0x8741x6 > _0x8741x8;) {
-            _0x8741x9 = _0x8741x4[_0x8741xa]['href'], !_0x8741x9['match'](_0x8741x5[_0x8741x8]) && _0x8741x9 && _0x8741x9['match']('http') || (_0x8741x7 = !0), _0x8741x8++
-        };
-        if (0 == _0x8741x7) {
-            var _0x8741xb = Base64['encode'](_0x8741x9);
-            _0x8741x4[_0x8741xa]['href'] = urlweb + '/url-nya.php?site=' + _0x8741xb + '&c=0&user=' + User_ID, _0x8741x4[_0x8741xa]['rel'] = 'nofollow', a_to_vb++, a_to_vc += _0x8741xa + ':::' + _0x8741x4[_0x8741xa]['href'] + '\x0A'
-        }
-    };
-    var _0x8741xc = document['getElementById']('anonyminized'),
-        _0x8741xd = document['getElementById']('found_links');
-    _0x8741xc && (_0x8741xc['innerHTML'] += a_to_vb), _0x8741xd && (_0x8741xd['innerHTML'] += a_to_va)
-}
-function a_to_fa() {
-    var _0x8741x3 = new Array;
-    return protected_links = protected_links['replace'](' ', ''), _0x8741x3 = protected_links['split'](',')
-}
-var Base64 = {
-    _keyStr: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',
-    encode: function (_0x8741x3) {
-        var _0x8741x4, _0x8741x5, _0x8741x6, _0x8741x7, _0x8741x8, _0x8741x9, _0x8741xa, _0x8741xb = '',
-            _0x8741xc = 0;
-        for (_0x8741x3 = Base64._utf8_encode(_0x8741x3); _0x8741xc < _0x8741x3['length'];) {
-            _0x8741x4 = _0x8741x3['charCodeAt'](_0x8741xc++), _0x8741x5 = _0x8741x3['charCodeAt'](_0x8741xc++), _0x8741x6 = _0x8741x3['charCodeAt'](_0x8741xc++), _0x8741x7 = _0x8741x4 >> 2, _0x8741x8 = (3 & _0x8741x4) << 4 | _0x8741x5 >> 4, _0x8741x9 = (15 & _0x8741x5) << 2 | _0x8741x6 >> 6, _0x8741xa = 63 & _0x8741x6, isNaN(_0x8741x5) ? _0x8741x9 = _0x8741xa = 64 : isNaN(_0x8741x6) && (_0x8741xa = 64), _0x8741xb = _0x8741xb + this['_keyStr']['charAt'](_0x8741x7) + this['_keyStr']['charAt'](_0x8741x8) + this['_keyStr']['charAt'](_0x8741x9) + this['_keyStr']['charAt'](_0x8741xa)
-        };
-        return _0x8741xb
-    },
-    decode: function (_0x8741x3) {
-        var _0x8741x4, _0x8741x5, _0x8741x6, _0x8741x7, _0x8741x8, _0x8741x9, _0x8741xa, _0x8741xb = '',
-            _0x8741xc = 0;
-        for (_0x8741x3 = _0x8741x3['replace'](/[^A-Za-z0-9\+\/\=]/g, ''); _0x8741xc < _0x8741x3['length'];) {
-            _0x8741x7 = this['_keyStr']['indexOf'](_0x8741x3['charAt'](_0x8741xc++)), _0x8741x8 = this['_keyStr']['indexOf'](_0x8741x3['charAt'](_0x8741xc++)), _0x8741x9 = this['_keyStr']['indexOf'](_0x8741x3['charAt'](_0x8741xc++)), _0x8741xa = this['_keyStr']['indexOf'](_0x8741x3['charAt'](_0x8741xc++)), _0x8741x4 = _0x8741x7 << 2 | _0x8741x8 >> 4, _0x8741x5 = (15 & _0x8741x8) << 4 | _0x8741x9 >> 2, _0x8741x6 = (3 & _0x8741x9) << 6 | _0x8741xa, _0x8741xb += String['fromCharCode'](_0x8741x4), 64 != _0x8741x9 && (_0x8741xb += String['fromCharCode'](_0x8741x5)), 64 != _0x8741xa && (_0x8741xb += String['fromCharCode'](_0x8741x6))
-        };
-        return _0x8741xb = Base64._utf8_decode(_0x8741xb)
-    },
-    _utf8_encode: function (_0x8741x3) {
-        _0x8741x3 = _0x8741x3['replace'](/\r\n/g, '\x0A');
-        for (var _0x8741x4 = '', _0x8741x5 = 0; _0x8741x5 < _0x8741x3['length']; _0x8741x5++) {
-            var _0x8741x6 = _0x8741x3['charCodeAt'](_0x8741x5);
-            128 > _0x8741x6 ? _0x8741x4 += String['fromCharCode'](_0x8741x6) : _0x8741x6 > 127 && 2048 > _0x8741x6 ? (_0x8741x4 += String['fromCharCode'](_0x8741x6 >> 6 | 192), _0x8741x4 += String['fromCharCode'](63 & _0x8741x6 | 128)) : (_0x8741x4 += String['fromCharCode'](_0x8741x6 >> 12 | 224), _0x8741x4 += String['fromCharCode'](_0x8741x6 >> 6 & 63 | 128), _0x8741x4 += String['fromCharCode'](63 & _0x8741x6 | 128))
-        };
-        return _0x8741x4
-    },
-    _utf8_decode: function (_0x8741x3) {
-        for (var _0x8741x4 = '', _0x8741x5 = 0, _0x8741x6 = c1 = c2 = 0; _0x8741x5 < _0x8741x3['length'];) {
-            _0x8741x6 = _0x8741x3['charCodeAt'](_0x8741x5), 128 > _0x8741x6 ? (_0x8741x4 += String['fromCharCode'](_0x8741x6), _0x8741x5++) : _0x8741x6 > 191 && 224 > _0x8741x6 ? (c2 = _0x8741x3['charCodeAt'](_0x8741x5 + 1), _0x8741x4 += String['fromCharCode']((31 & _0x8741x6) << 6 | 63 & c2), _0x8741x5 += 2) : (c2 = _0x8741x3['charCodeAt'](_0x8741x5 + 1), c3 = _0x8741x3['charCodeAt'](_0x8741x5 + 2), _0x8741x4 += String['fromCharCode']((15 & _0x8741x6) << 12 | (63 & c2) << 6 | 63 & c3), _0x8741x5 += 3)
-        };
-        return _0x8741x4
-    }
-},
-    encode = document['getElementById']('encode'),
-    decode = document['getElementById']('decode'),
-    output = document['getElementById']('output'),
-    input = document['getElementById']('input'),
-    User_ID = '',
-    protected_links = '',
-    a_to_va = 0,
-    a_to_vb = 0,
-    a_to_vc = ''
+var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(input){var output="";var chr1,chr2,chr3,enc1,enc2,enc3,enc4;var i=0;input=Base64._utf8_encode(input);while(i<input.length){chr1=input.charCodeAt(i++);chr2=input.charCodeAt(i++);chr3=input.charCodeAt(i++);enc1=chr1>>2;enc2=((chr1&3)<<4)|(chr2>>4);enc3=((chr2&15)<<2)|(chr3>>6);enc4=chr3&63;if(isNaN(chr2)){enc3=enc4=64;}else if(isNaN(chr3)){enc4=64;}
+output=output+ this._keyStr.charAt(enc1)+ this._keyStr.charAt(enc2)+ this._keyStr.charAt(enc3)+ this._keyStr.charAt(enc4);}
+return output;},decode:function(input){var output="";var chr1,chr2,chr3;var enc1,enc2,enc3,enc4;var i=0;input=input.replace(/[^A-Za-z0-9\+\/\=]/g,"");while(i<input.length){enc1=this._keyStr.indexOf(input.charAt(i++));enc2=this._keyStr.indexOf(input.charAt(i++));enc3=this._keyStr.indexOf(input.charAt(i++));enc4=this._keyStr.indexOf(input.charAt(i++));chr1=(enc1<<2)|(enc2>>4);chr2=((enc2&15)<<4)|(enc3>>2);chr3=((enc3&3)<<6)|enc4;output=output+ String.fromCharCode(chr1);if(enc3!=64){output=output+ String.fromCharCode(chr2);}
+if(enc4!=64){output=output+ String.fromCharCode(chr3);}}
+output=Base64._utf8_decode(output);return output;},_utf8_encode:function(string){string=string.replace(/\r\n/g,"\n");var utftext="";for(var n=0;n<string.length;n++){var c=string.charCodeAt(n);if(c<128){utftext+=String.fromCharCode(c);} else if((c>127)&&(c<2048)){utftext+=String.fromCharCode((c>>6)|192);utftext+=String.fromCharCode((c&63)|128);}
+else{utftext+=String.fromCharCode((c>>12)|224);utftext+=String.fromCharCode(((c>>6)&63)|128);utftext+=String.fromCharCode((c&63)|128);}}
+return utftext;},_utf8_decode:function(utftext){var string="";var i=0;var c=c1=c2=0;while(i<utftext.length){c=utftext.charCodeAt(i);if(c<128){string+=String.fromCharCode(c);i++;} else if((c>191)&&(c<224)){c2=utftext.charCodeAt(i+ 1);string+=String.fromCharCode(((c&31)<<6)|(c2&63));i+=2;}
+else{c2=utftext.charCodeAt(i+ 1);c3=utftext.charCodeAt(i+ 2);string+=String.fromCharCode(((c&15)<<12)|((c2&63)<<6)|(c3&63));i+=3;}}
+return string;}}
+var encode=document.getElementById('encode'),decode=document.getElementById('decode'),output=document.getElementById('output'),input=document.getElementById('input');var User_ID="";var protected_links="";var a_to_va=0;var a_to_vb=0;var a_to_vc="";function auto_safelink(){auto_safeconvert();}
+function auto_safeconvert(){var a_to_vd=window.location.hostname;if(protected_links!=""&&!protected_links.match(a_to_vd)){protected_links+=", "+ a_to_vd;}else if(protected_links=="")
+{protected_links=a_to_vd;}
+var a_to_ve="";var a_to_vf=new Array();var a_to_vg=0;a_to_ve=document.getElementsByTagName("a");a_to_va=a_to_ve.length;a_to_vf=a_to_fa();a_to_vg=a_to_vf.length;var a_to_vh=false;var j=0;var a_to_vi="";for(var i=0;i<a_to_va;i++)
+{a_to_vh=false;j=0;while(a_to_vh==false&&j<a_to_vg)
+{a_to_vi=a_to_ve[i].href;if(a_to_vi.match(a_to_vf[j])||!a_to_vi||!a_to_vi.match("http"))
+{a_to_vh=true;}
+j++;}
+if(a_to_vh==false)
+{var encryptedUrl=Base64.encode(a_to_vi);a_to_ve[i].href="http://amankan.iblogger.org/url-nya.php?site="+ encryptedUrl;a_to_ve[i].rel="nofollow";a_to_vb++;a_to_vc+=i+":::"+ a_to_ve[i].href+"\n";}}
+var a_to_vj=document.getElementById("anonyminized");var a_to_vk=document.getElementById("found_links");if(a_to_vj)
+{a_to_vj.innerHTML+=a_to_vb;}
+if(a_to_vk)
+{a_to_vk.innerHTML+=a_to_va;}}
+function a_to_fa()
+{var a_to_vf=new Array();protected_links=protected_links.replace(" ","");a_to_vf=protected_links.split(",");return a_to_vf;}
